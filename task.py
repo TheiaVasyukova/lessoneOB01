@@ -30,3 +30,16 @@ class TaskManager:
         for task in self.tasks.values():
             print(task.display_info())
 
+manager = TaskManager()
+manager.add_task("Заказать пиццу", "2024-05-17")
+manager.add_task("Сходить за кофе с круассаном", "2024-05-17")
+manager.add_task("Записаться на маникюр", "2024-05-19")
+
+manager.mark_task_completed("Заказать пиццу")
+manager.mark_task_completed("Сходить за кофе с круассаном")
+
+manager.display_tasks()
+
+print("Не выполнено:")
+for task in manager.get_pending_tasks():
+    print(task.display_info())
